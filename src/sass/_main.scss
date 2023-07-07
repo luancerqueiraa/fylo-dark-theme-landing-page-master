@@ -1,0 +1,119 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.main {
+    background: var(--color-secondary);
+    padding: 3rem 0 10rem;
+
+    .benefit-cards {
+        display: grid;
+        gap: 1rem;
+        max-width: 60rem;
+        margin-inline: auto;
+        margin-bottom: 6rem;
+    }
+
+    .benefit-card {
+        text-align: center;
+        @include contain;
+
+        .benefit-card-info {
+            max-width: 24.5rem;
+            margin: 0 auto;
+        } 
+
+        h2 {
+            margin: 1.5rem 0 .6rem;
+        }
+
+        p {
+            margin-bottom: 3rem;
+        }
+    }
+    
+    .stay-productive {
+        display: grid;
+        gap: 3rem;
+       
+        .stay-productive-img{
+           justify-self: center;
+        }
+
+        h2 {
+            margin-bottom: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .stay-productive-info {
+            max-width: 33rem;
+        }
+    }
+}
+
+ .btn-productive {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    color: var(--gradient-primary);
+    padding-bottom: .5rem;
+
+    &:hover {
+        opacity: .7;
+    }
+
+    img {
+        margin-left: .3rem;
+    }
+
+    &::after {
+        @include transition;
+        position: absolute;
+        display: inline-block;
+        content: "";
+        bottom: 0;
+        height: 0.143rem;
+        width: 100%;
+        background: var(--gradient-primary);
+        transform-origin: center;
+    }  
+    
+    &:hover::after {
+        transform: scale(.2);
+    }
+ }
+
+
+ //Media Queries
+
+ @media (min-width: $breakpoint-sm) {
+    .main{
+        padding-top: 0;
+
+        .benefit-cards {
+            grid-template-columns: repeat(auto-fit, minmax(450px,1fr)) ;
+        }
+    }
+ }
+
+ @media (min-width: $breakpoint-md) {
+     .main {
+        .stay-productive {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 1;
+
+            .stay-productive-info {
+                justify-self: center;
+            }
+        
+            .stay-productive-img{
+                justify-self: flex-end;
+            } 
+        }
+    }
+}
+
+

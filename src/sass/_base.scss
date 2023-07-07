@@ -1,0 +1,68 @@
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 14px;
+    font-family: var(--font-secondary);
+    background: var(--color-primary);
+    font-weight: 400;
+    color: var(--white)
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-primary);
+}
+
+li {
+     list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    @include contain;
+}
+
+.btn {
+    display: inline-flex;
+    padding: 1rem 5rem;
+    border-radius: 5rem;
+    font-family: var(--color-primary);
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: linear-gradient(to right,var(--gradient-primary), var(--gradient-secondary));
+    opacity: .9;  
+    color: var(--white);
+    @include transition;
+    
+    &:hover {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+}
+
+// Responsive
+
+@media (min-width: $breakpoint-xl) {
+    .container {
+        @include contain-desktop;
+    }
+}

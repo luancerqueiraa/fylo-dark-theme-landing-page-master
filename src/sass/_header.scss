@@ -1,0 +1,102 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.7rem;
+    
+    &-logo {
+        width: 4.5rem;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        
+        &-item {
+            color: var(--white);
+            opacity: .7;
+            @include transition;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.header-section {
+    background: url(../../src/images/bg-curvy-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 150% 50%;
+    padding: 3rem 0 4rem;
+    transform: translateY(1px);
+
+    &-content {
+        text-align: center;
+       
+        h1 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            letter-spacing: 1px;
+        }
+
+        p {
+            padding-bottom: 2rem;
+            
+        }
+    }
+
+    &-info {
+        max-width: 31.25rem;
+        margin-inline: auto;
+    }
+}
+
+
+// Responsive 
+
+@media (min-width: $breakpoint-md) {
+    .header-section {
+        background: url(../../src/images/bg-curvy-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        padding-bottom: 10rem;  
+    }  
+}
+
+@media (min-width: $breakpoint-lg) {
+    .header {
+        margin-top: 3rem;
+
+        &-logo {
+            width: 8rem;
+        }
+
+        .nav-links-item {
+            font-size: 1rem;
+        }
+    }
+
+    .header-section {
+        background-size:100% 40%;
+        padding-bottom: 8rem;
+    }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
