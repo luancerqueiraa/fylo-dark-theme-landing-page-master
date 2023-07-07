@@ -10,7 +10,8 @@
 
 ### Links 
 
-- Live Site URL: [Live Site](https://luancerqueira1.github.io/fylo-dark-theme-landing-page-master/)
+- Live Site URL: [Live Site](https://luancerqueiraa.github.io/fylo-dark-theme-landing-page-master/)
+
 
 ### Screenshots
 
